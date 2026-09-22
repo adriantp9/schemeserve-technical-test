@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[Provider] (
+	[ProviderId] NVARCHAR(50) NOT NULL,
+	[OrganisationType] NVARCHAR(50) NOT NULL,
+	[OwnershipType] NVARCHAR(100) NULL,
+	[Type] NVARCHAR(100) NOT NULL,
+	[Name] NVARCHAR(255) NOT NULL,
+	[BrandId] NVARCHAR(50) NULL,
+	[BrandName] NVARCHAR(255) NULL,
+	[RegistrationStatus] NVARCHAR(50) NULL,
+	[RegistrationDate] DATE NULL,
+	[CompaniesHouseNumber] NVARCHAR(20) NULL,
+	[CharityNumber] NVARCHAR(20) NULL,
+	[Website] NVARCHAR(255) NULL,
+	[PostalAddressLine1] NVARCHAR(255) NULL,
+	[PostalAddressLine2] NVARCHAR(255) NULL,
+	[PostalAddressTownCity] NVARCHAR(100) NULL,
+	[PostalAddressCounty] NVARCHAR(100) NULL,
+	[Region] NVARCHAR(100) NULL,
+	[PostalCode] NVARCHAR(15) NULL,
+	[Uprn] NVARCHAR(20) NULL,
+	[OnspdLatitude] DECIMAL(9, 6) NULL,
+	[OnspdLongitude] DECIMAL(9, 6) NULL,
+	[MainPhoneNumber] NVARCHAR(30) NULL,
+	[InspectionDirectorate] NVARCHAR(100) NULL,
+	[Constituency] NVARCHAR(100) NULL,
+	[LocalAuthority] NVARCHAR(100) NULL,
+	[LastInspectionDate] DATE NULL,
+	[ExpiryDate] DATE NOT NULL,
+	CONSTRAINT [PK_Provider] PRIMARY KEY ( [ProviderId] )
+)
+
+GO
