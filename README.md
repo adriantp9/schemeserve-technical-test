@@ -1,4 +1,4 @@
-# schemeserve-technical-test
+# SchemeServe Technical Test
 
 ## How to Run
 If you have Visual Studio installed, then you should have MS SQL Local DB installed too. If not you can install it from: https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver17.
@@ -36,6 +36,7 @@ Please send me an email (phillips.adrian@gmail.com) if you have any issues.
 
 ## Notes
 - The GetProviders API endpoint, takes zero parameters and works with the first page of CQC data only. I didn't add paging pass-through as it didn't seem to prove anything.
+- Sensible data lengths and boundaries were given to CQC data types due to missing detail in the CQC OpenAPI schema.
 
 ## Alternative Paths Not Taken
 - Used Redis and stored the provider data as JSON.
