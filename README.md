@@ -5,7 +5,7 @@ If you have Visual Studio installed, then you should have MS SQL Local DB instal
 
 Load the solution into Visual Studio. Set the TechTest project as your start-up project and click "Start Debugging" or press F5.
 
-The solution will start-up and you should see the console window report on creating the DbUp database and tables. A separate web browser will open and should automatically take you to: https://localhost:7208/scalar/
+The solution will start-up and you should see the console window report on creating the DbUp database and tables. A separate web browser will open and automatically take you to: https://localhost:7208/scalar/
 
 You can test the 2 API endpoints using Scalar.
 
@@ -39,14 +39,14 @@ Please send me an email (phillips.adrian@gmail.com) if you have any issues.
 - Sensible data lengths and boundaries were given to CQC data types due to missing detail in the CQC OpenAPI schema.
 
 ## Alternative Paths Not Taken
-- Used Redis and stored the provider data as JSON.
+- Use Redis and stored the provider data as JSON.
 - Could use FastEndpoints (Vertical Slice Architecture might be a good fit for this kind of connector app).
 
 ## Options for Production
-- Added more unit tests.
+- Add more unit tests.
 - Connection string and APIM subscription key value are in config, but in production would be stored as secrets somewhere secure like an Azure Key Vault.
-- Moved the "1 month" expiry timespan into config.
-- Used database transactions in places.
-- Added logging and observability.
+- Move the "1 month" expiry timespan into config.
+- Use database transactions.
+- Add logging and observability.
 - For more complex APIs I would use FluentValidation to validate request models.
 - OAuth2 or API key security around the new API endpoints.
