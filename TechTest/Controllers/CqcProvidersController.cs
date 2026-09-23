@@ -24,7 +24,7 @@ namespace TechTest.Controllers
                 var response = new GetProvidersResponse();
                 response.Providers.AddRange(providerDtos);
 
-                return response;
+                return Ok(response);
             }
             catch (CqcClientRequestException ex)
             {
@@ -32,6 +32,13 @@ namespace TechTest.Controllers
                     detail: ex.Message,
                     statusCode: ex.StatusCode,
                     title: "CQC client error");
+            }
+            catch (Exception)
+            {
+                return Problem(
+                    detail: "An unexpected error has occurred.",
+                    statusCode: StatusCodes.Status500InternalServerError,
+                    title: "Unexpected error");
             }
         }
 
@@ -47,7 +54,7 @@ namespace TechTest.Controllers
             {
                 var provider = await cqcProviderService.GetProviderAsync(id);
 
-                return provider.Adapt<GetProviderByIdResponse>();
+                return Ok(provider.Adapt<GetProviderByIdResponse>());
             }
             catch (CqcClientRequestException ex)
             {
@@ -55,6 +62,13 @@ namespace TechTest.Controllers
                     detail: ex.Message,
                     statusCode: ex.StatusCode,
                     title: "CQC client error");
+            }
+            catch (Exception)
+            {
+                return Problem(
+                    detail: "An unexpected error has occurred.",
+                    statusCode: StatusCodes.Status500InternalServerError,
+                    title: "Unexpected error");
             }
         }
     }

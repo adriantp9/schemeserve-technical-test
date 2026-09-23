@@ -68,7 +68,7 @@ public class CqcProviderServiceTests
     }
 
     [Fact]
-    public async Task GetProviderAsync_WhenProviderIsNotCached_RepositoryCreatesNewProvider()
+    public async Task GetProviderAsync_WhenProviderIsNotCached_CreatesNewProvider()
     {
         // Arrange.
         var newProvider = new Provider()
@@ -99,7 +99,7 @@ public class CqcProviderServiceTests
     }
 
     [Fact]
-    public async Task GetProviderAsync_WhenCachedProviderExpiredToday_RepositoryRecreatesProvider()
+    public async Task GetProviderAsync_WhenCachedProviderExpiredToday_RecreatesProvider()
     {
         // Arrange.
         var expiredProvider = new Provider()
@@ -139,7 +139,7 @@ public class CqcProviderServiceTests
     }
 
     [Fact]
-    public async Task GetProviderAsync_WhenCachedProviderExpiredYesterday_RepositoryRecreatesProvider()
+    public async Task GetProviderAsync_WhenCachedProviderExpiredYesterday_RecreatesProvider()
     {
         // Arrange.
         var expiredProvider = new Provider()
@@ -179,7 +179,7 @@ public class CqcProviderServiceTests
     }
 
     [Fact]
-    public async Task GetProviderAsync_WhenProviderIsCached_RepositoryDoesNotCreateNewProvider()
+    public async Task GetProviderAsync_WhenProviderIsCached_ReturnsCachedProvider()
     {
         // Arrange.
         var cachedProvider = new Provider()
