@@ -15,7 +15,7 @@ Please send me an email (phillips.adrian@gmail.com) if you have any issues.
 - OpenAPI attributes on API endpoints.
 - .NET controllers for API endpoints.
 - Separate domain models and API models so both can evolve separately.
-- Mapster to easily mapping objects between layers.
+- Mapster for easy mapping of objects between layers.
 - DDD/Onion flavoured simple architecture.
 - Client for handling calls to CQC.
 - Custom exceptions for propagating CQC issues.
@@ -27,7 +27,7 @@ Please send me an email (phillips.adrian@gmail.com) if you have any issues.
 - Config for things that might change.
 - Flattened LastInspectionDate property to avoid adding complexity to model depth.
 - RESTful API design.
-- Expiry logic for provider moved inside the provider model.
+- Expiry date calculation for provider moved inside the provider model.
 - Repository abstraction for easier unit testing.
 - DbUp used for simple database and schema creation.
 - Microsoft SQL Server Local used for low/no install (should be already installed if you're running Visual Studio).
@@ -35,18 +35,18 @@ Please send me an email (phillips.adrian@gmail.com) if you have any issues.
 - xUnit, Moq, AAA notation and SUT notation for unit testing.
 
 ## Notes
-- The GetProviders API endpoint, takes zero parameters and works with the first page of CQC data only. I didn't add paging pass-through as it didn't seem to prove anything.
+- The GetProviders API endpoint, takes zero parameters and works with the first page of CQC data only. I didn't add paging pass-through as it didn't technically prove anything significantly.
 - Sensible data lengths and boundaries were given to CQC data types due to missing detail in the CQC OpenAPI schema.
 
 ## Alternative Paths Not Taken
-- Use Redis and stored the provider data as JSON.
-- Could use FastEndpoints (Vertical Slice Architecture might be a good fit for this kind of connector app).
+- Could use Redis and store the provider data as JSON.
+- Could use FastEndpoints (Vertical Slice Architecture, although not great for larger projects, would be a good fit for this kind of connector app).
 
 ## Options for Production
-- Add more unit tests.
+- Add more unit tests to increase coverage.
 - Connection string and APIM subscription key value are in config, but in production would be stored as secrets somewhere secure like an Azure Key Vault.
 - Move the "1 month" expiry timespan into config.
 - Use database transactions.
 - Add logging and observability.
 - For more complex APIs I would use FluentValidation to validate request models.
-- OAuth2 or API key security around the new API endpoints.
+- OAuth2 or API key to secure the new API endpoints.
